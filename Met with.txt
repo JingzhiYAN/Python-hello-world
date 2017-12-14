@@ -1,0 +1,5 @@
+Something I found.
+Python 3.6.3 is using the pip3. Which means: if you want to install anything with pip.
+You need to run the command as "pip3 XXX"
+
+Even the official document on site did not say this. What a mess....
