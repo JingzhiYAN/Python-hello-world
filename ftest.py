@@ -4,7 +4,6 @@ import urllib
 import re
 import csv
 import codecs
-
 file = open("categorylist.txt") # 需要查询的关键词按行放在文件里
 resultFile = open('F:\categorylist_type.csv','wb')  # 输出的文件。 
 # resultFile2 = open('C:\Users\sunkun\Desktop\pinpai2.csv','a+') 
@@ -30,26 +29,5 @@ while 1:
         content = response.read().decode('gbk')
         pattern = re.compile('<returntype>(.*?)</returntype>', re.S)
         resultType = re.findall(pattern, content)
-        print content
-        print (line, resultType[0])  # 测试
-        writer.writerow({'keywords':line, 'type':resultType[0]}) # 写入到文件中
-        singleResult = ""+line+resultType[0]
-        # singleResult = [line, resultType[0]]
-        # print singleResult
-        # writer = csv.writer(resultFile)
-        # resultFile.writelines(singleResult)
-        # resultFile.write(line+'\t')
-        # resultFile.write("\t")
-        # resultFile.write(resultType[0])
-        # resultFile.write("\n")
-        # resultFile.write(resultType[0])
 
-        # resultFile1.writelines(line)
-        # resultFile2.writelines(resultType[0])
-        # resultFile2.writelines("\n")
-
-    except urllib.URLError, e: # 异常处理
-        if hasattr(e, "code"):
-            print e.code
-        if hasattr(e, "reason"):
-            print e.reason
+        print 
