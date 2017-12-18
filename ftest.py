@@ -7,7 +7,7 @@ import csv
 import codecs
 import sys
 
-f=open("record.txt","a")
+
 a = open('categorylist.txt','r')
 while True:
     line = a.readline()
@@ -23,9 +23,12 @@ while True:
     c= b"Your search returns no results."
 
     if c in html:
+        f=open("record.txt","a")
         f.write('true')
         f.write('\n')
+        f.close()
     else:
+        f=open("record.txt","a")
         f.write('false')
         f.write('\n')
-f.close()
+        f.close()
