@@ -1,4 +1,4 @@
-# code by sunkun 20170417
+# code by Jingzhi Yan
 # -*- coding: UTF-8 -*-
 import urllib
 import urllib.request
@@ -6,6 +6,7 @@ import re
 import csv
 import codecs
 import sys
+import time
 
 
 a = open('categorylist.txt','r')
@@ -27,8 +28,10 @@ while True:
         f.write('true')
         f.write('\n')
         f.close()
+        time.sleep(0.5)
     else:
         f=open("record.txt","a")
         f.write('false')
         f.write('\n')
         f.close()
+        time.sleep(0.5)
