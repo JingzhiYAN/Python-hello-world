@@ -7,12 +7,19 @@ import csv
 import codecs
 import sys
 import time
+import random
 
 
 a = open('categorylist.txt','r')
 while True:
     line = a.readline()
     if not line:
+        break
+    if line is None:
+        f=open("record.txt","a")
+        f.write('\n')
+        print('\n')
+        f.close()
         break
     urlstart="http://www.costway.com/catalogsearch/result/?q="
     url=urlstart+line
@@ -27,11 +34,13 @@ while True:
         f=open("record.txt","a")
         f.write('true')
         f.write('\n')
+        print(line)
         f.close()
         time.sleep(0.5)
     else:
         f=open("record.txt","a")
         f.write('false')
         f.write('\n')
+        print('\n')
         f.close()
         time.sleep(0.5)
