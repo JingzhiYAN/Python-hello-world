@@ -10,31 +10,30 @@ import time
 import random
 
 
-a = open('categorylist.txt','r')
+a = open('notexisted.txt','r')
 while True:
     line = a.readline()
     if not line:
         break
     if line is None:
-        f=open("record.txt","a")
+        f = open("doublecheck.txt","a")
         f.write('\n')
         print('\n')
         f.close()
         break
-    urlstart="http://www.costway.com/catalogsearch/result/?q="
-    url=urlstart+line
+    urlstart="https://www.hicollie.com/search?q="
+    url = urlstart+line
     
     response = urllib.request.urlopen(url)
     html = response.read()
-    c= b"Your search returns no results."
+    c = b"did not yield any results."
 
     if c in html:
-        f=open("record.txt","a")
+        print('dis')
+        time.sleep(0.5)
+    else:
+        f = open("doublecheck.txt","a")
         f.write(line)
         f.write('\n')
-        print('not exist')
         f.close()
-        time.sleep(0.2)
-    else:
-        print(line)
-        time.sleep(0.2)
+        time.sleep(0.5)
